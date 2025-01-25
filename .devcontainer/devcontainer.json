@@ -1,0 +1,22 @@
+{
+    "name": "Go Development",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "app",
+    "workspaceFolder": "/app",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go"
+            ],
+            "settings": {
+                "go.toolsEnvVars": {
+                    "GOPATH": "/go"
+                },
+                "go.useLanguageServer": true,
+                "go.gopath": "/go"
+            }
+        }
+    },
+    "postCreateCommand": "go install golang.org/x/tools/gopls@v0.14.2",
+    "postStartCommand": "go install golang.org/x/tools/cmd/goimports@latest"
+} 
